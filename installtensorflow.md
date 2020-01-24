@@ -11,37 +11,37 @@ We should use the python 3 version and then run its bash script to install.
 
 ### Create conda virtual environment
 
-'conda create -n tensorflow_cpu pip python=3.6'
+`conda create -n tensorflow_cpu pip python=3.6`
 
-'conda activate tensorflow_cpu'
+`conda activate tensorflow_cpu`
 
 Python 3.8 is the latest version, so maybe it is smarter, to switch to 3.8.
 But it works with 3.6.
 
 ### Install Tensorflow
 
-Install Tensorflow version 2.0.0. A lot of compartability issues can occur if we donÂ´t use exactly this version.
+Install Tensorflow version 2.0.0. A lot of compartability issues can occur if we don´t use exactly this version.
 Also the compartability of Tensorflow and the Object detection Toolbox might get changed to a later Tensorflowversion later on.
 
-'conda install tensorflow==2.0.0'
+`conda install tensorflow==2.0.0`
 
-or if that doesnÂ´t work use pip
+or if that doesn´t work use pip
 
-'pip install tensorflow==2.0.0'
+`pip install tensorflow==2.0.0`
 
 ### Testing installation
 
 In a new terminal we activate the environment
 
-'conda activate tensorflow_cpu'
+`conda activate tensorflow_cpu`
 
 Test the installation by importing tensorflow in a python interpreter. (just type python in the terminal and then the code)
 
-'python'
+`python`
 
 ```python
 import tensorflow as tf
-hello = tf.constant('Hello, TensorFlow!')
+hello = tf.constant(`Hello, TensorFlow!`)
 sess = tf.Session()
 print(sess.run(hello))
 ```
@@ -52,17 +52,17 @@ Exept maybe a warning, that we are using an old version.
 
 ### now we need to install a lot of little programs
 
-'conda install pillow, lxml, jupyter, matplotlib, opencv, cython'
+`conda install pillow, lxml, jupyter, matplotlib, opencv, cython`
 
-maybe also contextlib2, I have it installed, but donÂ´t know if it is needed.
+maybe also contextlib2, I have it installed, but don´t know if it is needed.
 
 ### clone the repository
 
 Somwhere in the home folder create a folder called tensorflow.
-If you want to use my absolute paths use '~/Documents/tensorflow'
+If you want to use my absolute paths use `~/Documents/tensorflow`
 Clone the Tensorflow Models repository into this folder.
 https://github.com/tensorflow/models
-There should be a folder called 'tensorflow/models/research' now
+There should be a folder called `tensorflow/models/research` now
 
 ### protobuf compiler usage
 
@@ -77,7 +77,7 @@ unzip protobuf.zip
 
 ### Add Environment Variables
 
-'export PYTHONPATH=$PYTHONPATH:<PATH_TO_TF>/TensorFlow/models/research/object_detection'
+`export PYTHONPATH=$PYTHONPATH:<PATH_TO_TF>/TensorFlow/models/research/object_detection`
 
 ```
 # From within tensorflow/models/research/
