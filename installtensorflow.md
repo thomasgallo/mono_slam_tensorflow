@@ -20,12 +20,12 @@ But it works with 3.6.
 
 ### Install Tensorflow
 
-Install Tensorflow version 2.0.0. A lot of compartability issues can occur if we don´t use exactly this version.
+Install Tensorflow version 2.0.0. A lot of compartability issues can occur if we donÂ´t use exactly this version.
 Also the compartability of Tensorflow and the Object detection Toolbox might get changed to a later Tensorflowversion later on.
 
 'conda install tensorflow==2.0.0'
 
-or if that doesn´t work use pip
+or if that doesnÂ´t work use pip
 
 'pip install tensorflow==2.0.0'
 
@@ -54,7 +54,7 @@ Exept maybe a warning, that we are using an old version.
 
 'conda install pillow, lxml, jupyter, matplotlib, opencv, cython'
 
-maybe also contextlib2, I have it installed, but don´t know if it is needed.
+maybe also contextlib2, I have it installed, but donÂ´t know if it is needed.
 
 ### clone the repository
 
