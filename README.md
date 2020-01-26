@@ -33,6 +33,9 @@ The input of this module (*/camera/Image_raw*) is raw images that can com from e
 The outputs of this module are the position of the camera (*ORB_SLAM/Camera*), the current image being processed (*ORB_SLAM/Frame*) and finally the global map (*ORB_SLAM/Map*) as an instance of the class Marker defined in the vizualisation_msg package.
 In this project, only... will be used.
 
+* **[ip_camera](https://github.com/ravich2-7183/ip_camera)**
+This repository contains a ROS node to read frames from and ip camera stream and publish to a ROS topic (*/camera/Image_raw*). This repository need to be used with a streaming camera phone application. This repository has been tested with the [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=fr) application of the google play store.
+
 * **Tensorflow**
 
 
@@ -74,6 +77,24 @@ It describes all hardwares and softwares that are required for running the syste
 	
 	7. Source
 It describes step by step how to download and run the project on a new computer.
+
+- For the ip_camera repository:
+	1. Clone the repository in your catkin workspace
+	    ```
+		git clone https://github.com/ravich2-7183/ip_camera.git
+	    ```
+	2. Download a ip camera application on your phone
+	3. Stream your camera using the same wifi connection for your phone and your computer where the ROS is running
+	4. In the *ip_camera.launch* change the IP of the streamed video to your IP webcam which should look like that for example: 
+ 	    ```
+		http://192.168.1.5:8080/video		
+	    ```
+	5. Launch to have the streamed camera publish inside a ROS topic
+
+   	    ```
+		roslaunch ip_camera ip_camera.launch
+	    ```
+Now it is possible to achieved monocular slam using a phone camera.
 
 ## Results
 It presents the result using (images or videos) of the working system, in (real or simulation).
