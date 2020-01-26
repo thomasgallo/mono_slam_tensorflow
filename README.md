@@ -45,6 +45,34 @@ It describes all the modules within the architecture, i.e, (i) the inputs, (ii) 
 It describes all hardwares and softwares that are required for running the system.
 
 ### How to run the project
+- For the ORB_SLAM2 repository:
+	1. Install all the required prerequisites mentionned in the part 2 of the [repository](https://github.com/raulmur/ORB_SLAM2).
+	2. Clone the repository as described in part 3 but do not build yet.
+	3. Add the lines:
+	```
+	#include<unistd.h>;
+	#include<stdio.h>;
+	#include<stdlib.h>;
+	```
+	At the beginning of the files *Viewer.cc*, *Tracking.cc*, *LoopClosing.cc* in src and in Examples, every *file.cc* in Monocular, Stereo and RGB-D (for instance: *Examples/Monocular/mono_tum.cc*)
+	
+	4. Build as mentionned in part 3
+	5. Modify the file *Examples/ROS/ORB8SLAM2/CMakeLists.txt* to have :
+	```
+	set(LIBS
+	${OpenCV_LIBS}
+	${EIGEN3_LIBS}
+	${Pangolin_LIBRARIES}
+	${PROJECT_SOURCE_DIR}/../../../Thirdparty/DBoW2/lib/libDBoW2.so
+	${PROJECT_SOURCE_DIR}/../../../Thirdparty/g2o/lib/libg2o.so
+	${PROJECT_SOURCE_DIR}/../../../lib/libORB_SLAM2.so
+	-lboost_system
+	)
+	```
+	Also, change ```find_pachage(Pangolin REQUIRED)``` by ```find_pachage(Pangolin 0.2 REQUIRED)```
+	6. Build as explained in the part 7 of the git repository.
+	
+	7. Source
 It describes step by step how to download and run the project on a new computer.
 
 ## Results
