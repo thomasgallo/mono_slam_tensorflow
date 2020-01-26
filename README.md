@@ -13,7 +13,7 @@ This configuration will allow a very portable solution. To test it, we will setu
 
 ### Overall Architecture
 <p align="center"> 
-<img src="C:\Users\Kenza\Pictures\UML.png">
+<img src="UML.PNG">
 </p>
 As seen above and as discussed in the objective of the project, the project will be divided around three majors module, ORB_SLAM2, Tensorflow and the Android camera image acquirement. 
 
@@ -22,6 +22,7 @@ It describes what the project wants to achieve and defines the key terminologies
 
 ### Description of the Modules
 * **[ORB_SLAM2](https://github.com/raulmur/ORB_SLAM2)**
+
 This repository contains several ways of implementing SLAM among which Monocular, Stereo and RGB-D. In this project, the focus will be on the Monocular on as it correspond to the camera of a smartphone. Its functionning is close to a usual SLAM program : images are harvested and interpreted in real time. With information about the depth of the different part of this image, it is possible to place points on a 3D maps corresponding of the points of interest of the image and their distance to the camera frame. 
 
 
@@ -31,6 +32,9 @@ From the position differential of the points of interest, it is possible to dedu
 The input of this module (*/camera/Image_raw*) is raw images that can com from either a real-time system, the phone camera for instance, or a sequence of images put together in a rosbag. 
 The outputs of this module are the position of the camera (*ORB_SLAM/Camera*), the current image being processed (*ORB_SLAM/Frame*) and finally the global map (*ORB_SLAM/Map*) as an instance of the class Marker defined in the vizualisation_msg package.
 In this project, only... will be used.
+
+* **Tensorflow**
+
 
 
 It describes all the modules within the architecture, i.e, (i) the inputs, (ii) the internal working, and (iii) the outputs.
