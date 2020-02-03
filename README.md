@@ -141,7 +141,9 @@ Now it is possible to achieved monocular slam using a phone camera.
 		$ (venv) pip install --upgrade tensorflow
 		```
 		try to see if it is working
-		```$ (venv) python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"```
+		```
+		$ (venv) python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+		```
 		if the output of this is somes error, that's mean you probably don't have all the required libraries with your graphic card in order to run tensorflow (realated to CUDA), please see the error below.
 	
 	4. Change the input : go on ~catkin_ws/src/ros_people_object_detection_tensorflow/launch and edit cob_people_object_detection_tensorflow_params.yaml : you need to comment the line 14 (depth_namespace ...) and to change the topic ligne 11 : camera_namespace: "your_topic". For instance if you want to use the camera from ip_camera : camera_namesapce : "camera/image_raw".
