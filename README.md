@@ -178,7 +178,7 @@ The Recommendations follow naturally from the conclusions. They describe: the as
 * FirstName LastName: email@email.com
 * FirstName LastName: email@email.com
 * FirstName LastName: email@email.com
-
+<!--
 # Useful GitHub readme syntax
 
 ## To make bullet points
@@ -214,3 +214,4 @@ For example: Please do a ```catkin_make ```, once you have modified your code.
 ### Link to the repository that has this readme
 
 [The link](https://github.com/EmaroLab/GitHub_Readme_Template)
+-->
