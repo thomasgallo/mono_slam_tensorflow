@@ -175,9 +175,13 @@ It presents the result using (images or videos) of the working system, in (real 
 The Recommendations follow naturally from the conclusions. They describe: the assumptions made while building the system (and/or) the limitations of the working system. Therefore, presenting possible ideas that could overcome the limitations or assumptions. 
 
 ## Authors
-* FirstName LastName: email@email.com
-* FirstName LastName: email@email.com
-* FirstName LastName: email@email.com
+* Kenza Bourbakri: email@email.com
+* Thomas Gallo: thomas.gallo00@gmail.com
+* Theo Depalle: email@email.com
+* Paul Ndjomo: email@email.com
+* Vivek Vijaykumar ingle: email@email.com
+* Lennart Döhle: lennart.doehle@gmx.de
+
 <!--
 # Useful GitHub readme syntax
 
