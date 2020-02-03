@@ -39,7 +39,7 @@ This repository contains a ROS node to read frames from and ip camera stream and
 
 * **[Tensorflow](https://github.com/cagbal/ros_people_object_detection_tensorflow)**
 
-This repository conains the mains nodes to compute label objects rocognition. I will read a camera stream, detecct object with their labels and theirs probability and then publish the result in an array.
+This repository conatins the mains nodes to compute label objects rocognition. It will read a camera stream, detecct object with their labels and theirs probability and then publish the result in an array.
 
 For our project, we will only use object recognition. The input will be the ROS topic (subscribe) : ("/camera/image_raw") were our node (cob_people_object_detection_detection) will subscribe. 
 
