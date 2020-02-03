@@ -37,8 +37,17 @@ In this project, only... will be used.
 
 This repository contains a ROS node to read frames from and ip camera stream and publish to a ROS topic (*/camera/Image_raw*). This repository need to be used with a streaming camera phone application. This repository has been tested with the [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=fr) application of the google play store.
 
-* **Tensorflow**
+* **[Tensorflow](https://github.com/cagbal/ros_people_object_detection_tensorflow)**
 
+This repository conains the mains nodes to compute label objects rocognition. I will read a camera stream, detecct object with their labels and theirs probability and then publish the result in an array.
+
+For our project, we will only use object recognition. The input will be the ROS topic (subscribe) : ("/camera/image_raw") were our node (cob_people_object_detection_detection) will subscribe. 
+
+As ROS bridge is working with python2 we will use tensorflow with python2
+
+And the useful output topic (publishe) will be:
+- /object_detection/detections (cob_perception_msgs/DetectionArray) : that is an array that include all the detections with probabilities, labels and bounding boxes
+- /object_detection/detections_image (sensor_msgs/Image) : that is a ROS image message with the bouding box, label, and probability 
 
 
 It describes all the modules within the architecture, i.e, (i) the inputs, (ii) the internal working, and (iii) the outputs.
@@ -97,6 +106,66 @@ It describes step by step how to download and run the project on a new computer.
 	    ```
 Now it is possible to achieved monocular slam using a phone camera.
 
+- For the ros_people_object_detection_tensorflow : 
+	1. Install all the prerequisitie :
+		- I will use tensoflow-gpu so you need to be sure you have all the drivers for you graphic card.
+		- You need to install CUDA : please follow this [tutorial](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
+		- you need to have python2 on you computer : 
+		```
+		$ sudo apt update
+		$ sudo apt install python-dev python-pip
+		$ sudo pip install -U virtualenv  # system-wide install
+		```
+		- you need image_view if you don't have it
+		```
+		$ sudo apt-get install ros-kinetic-image-view
+		```
+
+	2. Clone the repository in you catkin workspace
+		```
+		$ cd ~/catkin_ws/src 
+		$ git clone --recursive https://github.com/cagbal/ros_people_object_detection_tensorflow.git
+		$ git clone https://github.com/cagbal/cob_perception_common.git
+		$ cd ros_people_object_detection_tensorflow/src
+		$ protoc object_detection/protos/*.proto --python_out=.
+		$ cd ~/catkin_ws
+		$ rosdep install --from-path src/ -y -i
+		$ catkin_make
+		$ pip install face_recognition
+		```
+	3. Create your virtual environnement and install [tensorflow](https://www.tensorflow.org/install/pip?lang=python2)
+		```
+		$ virtualenv --system-site-packages -p python2.7 ./venv
+		$ source ./venv/bin/activate
+		$ (venv) pip install --upgrade pip
+		$ (venv) pip install --upgrade tensorflow
+		```
+		try to see if it is working
+		```$ (venv) python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"```
+		if the output of this is somes error, that's mean you probably don't have all the required libraries with your graphic card in order to run tensorflow (realated to CUDA), please see the error below.
+	
+	4. Change the input : go on ~catkin_ws/src/ros_people_object_detection_tensorflow/launch and edit cob_people_object_detection_tensorflow_params.yaml : you need to comment the line 14 (depth_namespace ...) and to change the topic ligne 11 : camera_namespace: "your_topic". For instance if you want to use the camera from ip_camera : camera_namesapce : "camera/image_raw".
+	
+	5. The repository used depreciated function of tensorflow, so you need to change all this files by the ones in this repository (/!\ TO DO /!\)
+	
+	6. Run everything 
+	```
+	$ roscore
+	$ roslaunch ip_camera ip_camera.launch #if you are using ip_camera
+	$ source ~/venv/bin/activate
+	$ (venv) roslaunch cob_people_object_detection_tensorflow cob_people_object_detection_tensorflow.launch
+	```
+	if you want to see the result :
+	```
+	rosrun image_view image_view image:=/object_detection/detections_age
+	```
+	
+	- Most common error : 
+		- somme error with libnvinfer.so.6 or other librairie : I advise you to use synaptic to install the missing librairies because it know all the needed dependencies:
+		```$ sudo apt-get install synaptic ``` 
+		and then 
+		```$ sudo synaptic```
+		
 ## Results
 It presents the result using (images or videos) of the working system, in (real or simulation).
 
