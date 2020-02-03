@@ -13,7 +13,7 @@ This configuration will allow a very portable solution. To test it, we will setu
 
 ### Overall Architecture
 <p align="center"> 
-<img src="UML.PNG">
+<img src="UML.png">
 </p>
 As seen above and as discussed in the objective of the project, the project will be divided around three majors module, ORB_SLAM2, Tensorflow and the Android camera image acquirement. 
 
