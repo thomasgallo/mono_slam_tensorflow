@@ -172,7 +172,7 @@ This is the link to the report: < put the link here >
 ## Authors
 * Kenza Bourbakri: kenzaboubakri@gmail.com
 * Thomas Gallo: thomas.gallo00@gmail.com
-* Theo Depalle: theodepalle@gmail.com
+* Théo Dépalle: theodepalle@gmail.com
 * Paul Ndjomo: email@email.com
 * Vivek Vijaykumar ingle: email@email.com
 * Lennart Döhle: lennart.doehle@gmx.de
