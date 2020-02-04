@@ -39,13 +39,13 @@ This repository contains a ROS node to read frames from and ip camera stream and
 
 * **[Tensorflow](https://github.com/cagbal/ros_people_object_detection_tensorflow)**
 
-This repository conatins the mains nodes to compute label objects rocognition. It will read a camera stream, detecct object with their labels and theirs probability and then publish the result in an array.
+This repository contains the mains nodes to compute label objects rocognition. It will read a camera stream, detect objects with their labels and their probability and then publish the result in an array.
 
 For our project, we will only use object recognition. The input will be the ROS topic (subscribe) : ("/camera/image_raw") were our node (cob_people_object_detection_detection) will subscribe. 
 
 As ROS bridge is working with python2 we will use tensorflow with python2
 
-And the useful output topic (publishe) will be:
+And the useful output topic (publish) will be:
 - /object_detection/detections (cob_perception_msgs/DetectionArray) : that is an array that include all the detections with probabilities, labels and bounding boxes
 - /object_detection/detections_image (sensor_msgs/Image) : that is a ROS image message with the bouding box, label, and probability 
 
@@ -107,10 +107,10 @@ It describes step by step how to download and run the project on a new computer.
 Now it is possible to achieved monocular slam using a phone camera.
 
 - For the ros_people_object_detection_tensorflow : 
-	1. Install all the prerequisitie :
+	1. Install all the prerequisites :
 		- I will use tensoflow-gpu so you need to be sure you have all the drivers for you graphic card.
-		- You need to install CUDA : please follow this [tutorial](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
-		- you need to have python2 on you computer : 
+		- You need to install CUDA (if you have nvidia card): please follow this [tutorial](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
+		- you need to have python2 on your computer : 
 		```
 		$ sudo apt update
 		$ sudo apt install python-dev python-pip
@@ -144,9 +144,9 @@ Now it is possible to achieved monocular slam using a phone camera.
 		```
 		$ (venv) python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
 		```
-		if the output of this is somes error, that's mean you probably don't have all the required libraries with your graphic card in order to run tensorflow (realated to CUDA), please see the error below.
+		If the output of this is some errors, that's mean you probably don't have all the required libraries with your graphic card in order to run tensorflow (most of the time related to CUDA), please see the errors comments below.
 	
-	4. Change the input : go on ~catkin_ws/src/ros_people_object_detection_tensorflow/launch and edit cob_people_object_detection_tensorflow_params.yaml : you need to comment the line 14 (depth_namespace ...) and to change the topic ligne 11 : camera_namespace: "your_topic". For instance if you want to use the camera from ip_camera : camera_namesapce : "camera/image_raw".
+	4. Change the input topic : go on ~catkin_ws/src/ros_people_object_detection_tensorflow/launch and edit cob_people_object_detection_tensorflow_params.yaml : you need to comment the line 14 (depth_namespace ...) and to change the topic ligne 11 : camera_namespace: "your_topic". For instance if you want to use the camera from ip_camera : camera_namesapce : "camera/image_raw".
 	
 	5. The repository used depreciated function of tensorflow, so you need to change all this files by the ones in this repository (/!\ TO DO /!\)
 	
@@ -159,14 +159,15 @@ Now it is possible to achieved monocular slam using a phone camera.
 	```
 	if you want to see the result :
 	```
-	rosrun image_view image_view image:=/object_detection/detections_age
+	rosrun image_view image_view image:=/object_detection/detections_image
 	```
 	
 	- Most common error : 
-		- somme error with libnvinfer.so.6 or other librairie : I advise you to use synaptic to install the missing librairies because it know all the needed dependencies:
+		- somme error with libnvinfer.so.6 or other librairies : I advise you to use synaptic to install the missing librairies because it know all the needed dependencies:
 		```$ sudo apt-get install synaptic ``` 
 		and then 
 		```$ sudo synaptic```
+		Then you can search the librairy by name and install it. 
 		
 ## Results
 It presents the result using (images or videos) of the working system, in (real or simulation).
