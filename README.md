@@ -59,11 +59,11 @@ It describes all the modules within the architecture, i.e, (i) the inputs, (ii) 
 2. Clone the repository as described in part 3 but do not build yet.
 3. Add the lines:
 ```
-#include<unistd.h>;
-#include<stdio.h>;
-#include<stdlib.h>;
+#include<unistd.h>
+#include<stdio.h>
+#include<stdlib.h>
 ```
-At the beginning of the files *Viewer.cc*, *Tracking.cc*, *LoopClosing.cc* in src and in Examples, every *file.cc* in Monocular, Stereo and RGB-D (for instance: *Examples/Monocular/mono_tum.cc*)
+At the beginning of the files *Viewer.cc*, *Tracking.cc*, *System.cc* *LoopClosing.cc* in src and in Examples, every *file.cc* in Monocular, Stereo and RGB-D (for instance: *Examples/Monocular/mono_tum.cc*)
 
 4. Build as mentionned in part 3
 5. Modify the file *Examples/ROS/ORB8SLAM2/CMakeLists.txt* to have :
