@@ -63,7 +63,7 @@ It describes all the modules within the architecture, i.e, (i) the inputs, (ii) 
 #include<stdio.h>
 #include<stdlib.h>
 ```
-At the beginning of the files *Viewer.cc*, *Tracking.cc*, *System.cc* *LoopClosing.cc* in src and in Examples, every *file.cc* in Monocular, Stereo and RGB-D (for instance: *Examples/Monocular/mono_tum.cc*)
+At the beginning of the files *Viewer.cc*, *Tracking.cc*, *System.cc* *LoopClosing.cc* *LocalMapping.cc* in src and in Examples, every *file.cc* in Monocular, Stereo and RGB-D (for instance: *Examples/Monocular/mono_tum.cc*)
 
 4. Build as mentionned in part 3
 5. Modify the file *Examples/ROS/ORB8SLAM2/CMakeLists.txt* to have :
@@ -103,7 +103,7 @@ The IP is clearly given on the [IP Webcam](https://play.google.com/store/apps/de
 roslaunch ip_camera ip_camera.launch
 ```
 This launch will be needed to use tensorflow and the slam with your android phone camera.
-If you don't openCV install on your computer the package will not work. Therefor, it is necessary to install it by executing:
+If you don't openCV install on your computer the package will not work. Therefore, it is necessary to install it by executing:
 ```
 sudo apt-get install python-opencv
 ```
