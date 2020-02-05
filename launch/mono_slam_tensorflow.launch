@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- IP CAMERA LAUNCH -->
+  <include file="$(find ip_camera)/ip_camera.launch"/>
+
+  <!-- TENSORFLOW LAUNCH -->
+  <!--include file="$(find cob_people_object_detection_tensorflow)/cob_people_object_detection_tensorflow.launch"/-->
+
+  <!-- VIEW OF TENSORFLOW LAUNCH -->
+  <!--node name="image_view" pkg="image_view" type="image_view" output = "screen">
+    <param name="image" value="/object_detection/detections_image"/>
+  </node-->
+
+  <!-- ORB SLAM2 NODE -->
+  <node name="ORB_SLAM2" pkg="ORB_SLAM2" type="Mono" output = "screen"/>
+    <!--rosparam command="load" file="/home/thomas/catkin_sofar/src/ORB_SLAM2/Vocabulary/ORBvoc.txt"/-->
+    <!--rosparam command="load" file="/home/thomas/catkin_sofar/src/ORB_SLAM2/Examples/ROS/ORB_SLAM2/Asus.yaml"/>
+  </node-->
+
+</launch>
