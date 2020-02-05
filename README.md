@@ -103,6 +103,11 @@ The IP is clearly given on the [IP Webcam](https://play.google.com/store/apps/de
 roslaunch ip_camera ip_camera.launch
 ```
 This launch will be needed to use tensorflow and the slam with your android phone camera.
+If you don't openCV install on your computer the package will not work. Therefor, it is necessary to install it by executing:
+```
+sudo apt-get install python-opencv
+```
+
 ### Module <ros_people_object_detection_tensorflow>
 1. Install all the prerequisites :
 - I will use tensorflow-gpu so you need to be sure you have all the drivers for you graphic card.
