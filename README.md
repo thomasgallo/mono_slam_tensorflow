@@ -4,7 +4,7 @@
 The purpose of this project is to be able to map a new environment by giving information on the topology of the environment as well as the object of persons recognize in it. This mapping requires a gathering of images coming from a camera. Usually in SLAM, a stereo camera is used i.e. a camera with two or more lenses which allows the camera to simulate human binocular vision, and therefore gives it the ability to capture three-dimensional images (cf: wikipedia). The particularity of this project is the type of camera chosen. Indeed, it is not so common to have a stereo camera as it is more expensive and dedicated to more precise work. In the contrary, monocular camera are very common and most people posess one as it is embedded on smarthpone or even laptop. The purpose of this project is therefore to be able to map a new environment easily and without specific equipment.
 
 
-To do so, the ORB_SLAM2 git repository will be use to execute the SLAM while the Tensorflow repository will allow the object detection. The image will be acquired from the camera of a smartphone through an Android ros bridge.
+To do so, the ORB_SLAM2 git repository will be use to execute the SLAM while the Tensorflow repository will allow the object detection. The image will be acquired from the camera of a smartphone by streaming it through internet network.
 
 
 This configuration will allow a very portable solution. To test it, we will setup a scenario with interesting objects in a small room and evaluate the slamming as well as the object recognition. 
@@ -15,7 +15,7 @@ This configuration will allow a very portable solution. To test it, we will setu
 <p align="center"> 
 <img src="UML_04022020.png">
 </p>
-As seen above and as discussed in the objective of the project, the project will be divided around three majors module, ORB_SLAM2, Tensorflow and the Android camera image acquirement. 
+As seen above and as discussed in the objective of the project, the project will be divided around three majors module, ORB_SLAM2, Tensorflow and the phone camera image acquirement. 
 
 
 It describes what the project wants to achieve and defines the key terminologies of this project. Presents the hardware or tools used in the project.
@@ -35,7 +35,7 @@ In this project, only... will be used.
 
 ### Module <**[ip_camera](https://github.com/ravich2-7183/ip_camera)**>
 
-This repository contains a ROS node to read frames from and ip camera stream and publish to a ROS topic (*/camera/Image_raw*). This repository need to be used with a streaming camera phone application. This repository has been tested with the [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=fr) application of the google play store.
+This repository contains a ROS node to read frames from an ip camera stream and publish them to a ROS topic (*/camera/Image_raw*). To achive this the computer vision librairi openCV is used. This repository need to be used with a streaming camera phone application to stream your phone camera through wifi. It has been tested with the [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=fr) application of the google play store of android.
 
 ### Module <**[Tensorflow](https://github.com/cagbal/ros_people_object_detection_tensorflow)**>
 
@@ -90,19 +90,19 @@ It describes step by step how to download and run the project on a new computer.
 ```
 git clone https://github.com/ravich2-7183/ip_camera.git
 ```
-2. Download a ip camera application on your phone
-3. Stream your camera using the same wifi connection for your phone and your computer where the ROS is running
+2. Download a ip camera application on your phone (for example [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=fr))
+3. Stream your camera using the same wifi connection for your phone and your computer where the ROS is running(to limitate the latency in the camera stream you can reduce the quality of the video to *320x240p*)
 4. In the *ip_camera.launch* change the IP of the streamed video to your IP webcam which should look like that for example: 
 ```
-http://192.168.1.5:8080/video		
+http://<your_IP>:8080/video		
 ```
-5. Launch to have the streamed camera publish inside a ROS topic
+The IP is clearly given on the [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=fr) application while your are streaming.
 
+5. Launch to have the streamed camera publish inside a ROS topic (*/camera/Image_raw*)
 ```
 roslaunch ip_camera ip_camera.launch
 ```
-Now it is possible to achieved monocular slam using a phone camera.
-
+This launch will be needed to use tensorflow and the slam with your android phone camera.
 ### Module <ros_people_object_detection_tensorflow>
 1. Install all the prerequisites :
 - I will use tensorflow-gpu so you need to be sure you have all the drivers for you graphic card.
