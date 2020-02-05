@@ -110,7 +110,7 @@ sudo apt-get install python-opencv
 
 ### Module <ros_people_object_detection_tensorflow>
 1. Install all the prerequisites :
-- I will use tensorflow-gpu so you need to be sure you have all the drivers for you graphic card.
+- I will use tensorflow-gpu so you need to be sure you have all the drivers for you graphic card you can fin it in the section "Software requirements" on [this page](https://www.tensorflow.org/install/gpu)
 - You need to install CUDA (if you have nvidia card): please follow this [tutorial](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
 - you need to have python2 on your computer : 
 ```
