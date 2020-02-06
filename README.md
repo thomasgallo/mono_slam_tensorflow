@@ -91,7 +91,7 @@ It describes step by step how to download and run the project on a new computer.
 ```
 For instance, if you are in your ORB_SLAM2 repository:
 ```
-	rosrun ORB_SLAM2 Mono Vocabulary/ORBvoc.txt Examples/ROS/ORB_SLAM2/
+	rosrun ORB_SLAM2 Mono Vocabulary/ORBvoc.txt Examples/ROS/ORB_SLAM2/Asus.yaml
 ```
 
 ### Module <IP_Camera>
