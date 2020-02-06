@@ -13,7 +13,7 @@ This configuration will allow a very portable solution. To test it, we will setu
 
 ## Architecture of the System
 <p align="center"> 
-<img src="UML06022020.png">
+<img src="UML_04022020.png">
 </p>
 As seen above and as discussed in the objective of the project, the project will be divided around three majors module, ORB_SLAM2, Tensorflow and the phone camera image acquirement. 
 
@@ -84,6 +84,15 @@ Also, change ```find_pachage(Pangolin REQUIRED)``` by ```find_pachage(Pangolin 0
 
 7. Source
 It describes step by step how to download and run the project on a new computer.
+
+8. To use it, you just have to write in your terminal:
+```
+	rosrun ORB_SLAM2 Mono *PATH_TO_GO_TO/*Vocabulary/ORBvoc.txt *PATH_TO_GO_TO/*Examples/ROS/ORB_SLAM2/Asus.yaml
+```
+For instance, if you are in your ORB_SLAM2 repository:
+```
+	rosrun ORB_SLAM2 Mono Vocabulary/ORBvoc.txt Examples/ROS/ORB_SLAM2/
+```
 
 ### Module <IP_Camera>
 1. Clone the repository in your catkin workspace
