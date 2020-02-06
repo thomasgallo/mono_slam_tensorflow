@@ -196,7 +196,7 @@ This is the link to the report: < put the link here >
 * Kenza Bourbakri: kenzaboubakri@gmail.com
 * Thomas Gallo: thomas.gallo00@gmail.com
 * Théo Dépalle: theodepalle@gmail.com
-* Paul Ndjomo: lyriciste@sort.it
+* Paul Ndjomo: n.ndjomo93@gmail.com
 * Vivek Vijaykumar ingle: vivekvijay380@gmail.com
 * Lennart Döhle: lennart.doehle@gmx.de
 
