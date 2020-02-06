@@ -1,7 +1,7 @@
 # Monocular SLAM coupled with tensorflow object detection
 
 ## Objective of the Project
-The purpose of this project is to be able to map a new environment by giving information on the topology of the environment as well as the object of persons recognize in it. This mapping requires a gathering of images coming from a camera. Usually in SLAM, a stereo camera is used i.e. a camera with two or more lenses which allows the camera to simulate human binocular vision, and therefore gives it the ability to capture three-dimensional images (cf: wikipedia). The particularity of this project is the type of camera chosen. Indeed, it is not so common to have a stereo camera as it is more expensive and dedicated to more precise work. In the contrary, monocular camera are very common and most people posess one as it is embedded on smarthpone or even laptop. The purpose of this project is therefore to be able to map a new environment easily and without specific equipment.
+The purpose of this project is to be able to map a new environment using monocular SLAM and an object recognition algorithm. This mapping requires a gathering of images coming from a camera. Usually in SLAM, a stereo camera is used i.e. a camera with two or more lenses which allows the camera to simulate human binocular vision, and therefore gives it the ability to capture three-dimensional images (cf: wikipedia). The particularity of this project is the type of camera chosen. Indeed, it is not so common to have a stereo camera as it is more expensive and dedicated to more precise work. In the contrary, monocular camera are very common and most people posess one as it is embedded on smarthpone or even laptop. The purpose of this project is therefore to be able to map a new environment easily and without specific equipment.
 
 
 To do so, the ORB_SLAM2 git repository will be use to execute the SLAM while the Tensorflow repository will allow the object detection. The image will be acquired from the camera of a smartphone by streaming it through internet network.
@@ -15,10 +15,10 @@ This configuration will allow a very portable solution. To test it, we will setu
 <p align="center"> 
 <img src="UML06022020.png">
 </p>
-As seen above and as discussed in the objective of the project, the project will be divided around three majors module, ORB_SLAM2, Tensorflow and the phone camera image acquirement. 
+As seen above and as discussed in the objective of the project, the project will be divided around three majors modules, ORB_SLAM2, Tensorflow and the phone camera image acquirement. 
 
 
-It describes what the project wants to achieve and defines the key terminologies of this project. Presents the hardware or tools used in the project.
+The UML describes what the project wants to achieve and defines the key terminologies of this project. Presents the hardware or tools used in the project.
 
 ## Description of the System’s Architecture
 ### Module <**[ORB_SLAM2](https://github.com/raulmur/ORB_SLAM2)**>
@@ -179,6 +179,15 @@ rosrun image_view image_view image:=/object_detection/detections_image
 and then 
 ```$ sudo synaptic```
 Then you can search the librairy by name and install it.
+
+
+### Result
+Here the result of the three modules working together:
+
+![](ezgif.com-video-to-gif.gif)
+
+It can observe the monocular SLAM working with the point and the maps buillding and at the same time tensroflow is achieving object recognition.
+The object recognition is working good. The monocular loose track of its position some time but easily find it back when we go back to position that have already been map.
 
 ## Report
 This is the link to the report: < put the link here >
