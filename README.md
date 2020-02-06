@@ -190,7 +190,8 @@ It can observe the monocular SLAM working with the point and the maps buillding 
 The object recognition is working good. The monocular loose track of its position some time but easily find it back when we go back to position that have already been map.
 
 ## Report
-This is the link to the report: < put the link here >
+The report of this project can be found here:
+[Hands_on_with_SLAM](SOFAR_project___hands_on_SLAM__group_10_.pdf)
 
 ## Authors
 * Kenza Bourbakri: kenzaboubakri@gmail.com
