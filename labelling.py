@@ -34,7 +34,8 @@ while i<n:
 		# set label active
 		label.itemset(i,1)
 		# calculate distance to center
-		dist=np.linalg.norm(Xu-c)
+		center=np.matrix([bbr-bbl,bbt-bbb])
+		dist=np.linalg.norm(Xu-center)
 		# initialization
 		if distalt==999.0:
 			lp=i
