@@ -111,6 +111,12 @@ The IP is clearly given on the [IP Webcam](https://play.google.com/store/apps/de
 ```
 roslaunch ip_camera ip_camera.launch
 ```
+If this launch show the following error : 
+```
+[image_view-3] process has died ....
+```
+This might be because you don't have the correct link between your libraries OpenCV and cv_bridge. In order to get rid of this error, you can launch the image with rqt_image_view instead. For that go on the launch file *ip_camera.launch* and change all the *image_view* with *rqt_image_view*
+
 This launch will be needed to use tensorflow and the slam with your android phone camera.
 If you don't openCV install on your computer the package will not work. Therefore, it is necessary to install it by executing:
 ```
