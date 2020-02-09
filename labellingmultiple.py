@@ -12,7 +12,7 @@ n_p=points.size/3		# calcultes the number of points in the map
 pixels=np.matrix([320,240]) 	# image size
 
 # create random tensor flow output
-classes = np.arange(numobjects)
+classes = np.arange(1,numobjects+1)
 confidences = np.random.random((numobjects,1))
 bb = np.random.random((numobjects,4))
 bb = bb*0.5
