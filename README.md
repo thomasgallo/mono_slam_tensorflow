@@ -13,7 +13,7 @@ This configuration will allow a very portable solution. To test it, we will setu
 
 ## Architecture of the System
 <p align="center"> 
-<img src="UML06022020.png">
+<img src="images/UML06022020.png">
 </p>
 As seen above and as discussed in the objective of the project, the project will be divided around three majors modules, ORB_SLAM2, Tensorflow and the phone camera image acquirement. 
 
@@ -189,7 +189,7 @@ Then you can search the librairy by name and install it.
 ### Result
 Here the result of the three modules working together:
 
-![](ezgif.com-video-to-gif.gif)
+![](images/ezgif.com-video-to-gif.gif)
 
 It can observe the monocular SLAM working with the point and the maps buillding and at the same time tensroflow is achieving object recognition.
 The object recognition is working good. The monocular loose track of its position some time but easily find it back when we go back to position that have already been map.
