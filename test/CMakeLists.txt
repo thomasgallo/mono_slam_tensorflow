@@ -62,6 +62,7 @@ add_message_files(
     PoseRT.msg
     RectArray.msg
     Rect.msg
+    SlamMap.msg
 )
 
 ## Generate services in the 'srv' folder
